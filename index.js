@@ -41,6 +41,8 @@ async function dbQueries() {
         const student = await Student.find({ name: "Naveen"});
         // const student = await Student.findOne({ name: "Naveen"});
         // const student = await Student.deleteOne({ name: "Naveen"});
+        // const student = await Student.where("age").gt("26");
+        const student = await Student.where("age").gt("26").where("name").equals("Mohit").limit(1);
         console.log(student);
     } catch (e) {
         console.log(e.message);
